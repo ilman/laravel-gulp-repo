@@ -121,6 +121,10 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
+		'Krucas\Notification\NotificationServiceProvider',
+		'Way\Generators\GeneratorsServiceProvider',
+		'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
 
 	),
 
@@ -188,6 +192,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+		'Debugbar' 			=> 'Barryvdh\Debugbar\Facade',
+		'Notification' 	=> 'Krucas\Notification\Facades\Notification',
 
 	),
 

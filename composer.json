@@ -4,7 +4,11 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"barryvdh/laravel-debugbar": "~1.8",
+		"edvinaskrucas/notification": "3.*",
+		"scienceguard/sg_form": "1.*",
+		"xethron/migrations-generator": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
