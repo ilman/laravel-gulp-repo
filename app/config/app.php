@@ -125,6 +125,7 @@ return array(
 		'Krucas\Notification\NotificationServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
+		'Cartalyst\Sentry\SentryServiceProvider',
 
 	),
 
@@ -194,6 +195,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Debugbar' 			=> 'Barryvdh\Debugbar\Facade',
 		'Notification' 	=> 'Krucas\Notification\Facades\Notification',
+		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 
 	),
 

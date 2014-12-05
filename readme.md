@@ -60,6 +60,40 @@ Usage
 	Notification::showAll()
 
 
+### Install Sentry
+
+Open app/config/app.php and the following code
+	
+	// service provider
+	'Cartalyst\Sentry\SentryServiceProvider',
+	// service provider	
+	'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+	
+
+Run 
+```
+php artisan config:publish cartalyst/sentry
+```
+For migration run
+```
+php artisan migrate --package=cartalyst/sentry
+```
+
+Usage
+
+	// in controller
+	Notification::success('Success message');
+	Notification::error('Error message');
+	Notification::info('Info message');
+	Notification::warning('Warning message');
+
+	// in view
+	Notification::container('container_name') // or
+	Notification::container() // or
+	Notification::showAll()
+
+
+
 ## Start
 
 run ```composer install``` or ```composer update``` and test the following url

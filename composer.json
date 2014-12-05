@@ -8,7 +8,8 @@
 		"barryvdh/laravel-debugbar": "~1.8",
 		"edvinaskrucas/notification": "3.*",
 		"scienceguard/sg_form": "1.*",
-		"xethron/migrations-generator": "dev-master"
+		"xethron/migrations-generator": "dev-master",
+		"cartalyst/sentry": "2.1.*"
 	},
 	"autoload": {
 		"classmap": [
