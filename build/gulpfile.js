@@ -29,7 +29,10 @@ gulp.task('less', function() {
 
 // Minify Our CSS
 gulp.task('minify', function() {
-    return gulp.src('../public/assets/css/*.css')
+    return gulp.src([
+            '../public/assets/css/*.css',
+            '!../public/assets/css/*.min.css'
+        ])
         .pipe(plumber())
         .pipe(rename(function(path){
             path.extname = ".min.css";
@@ -56,6 +59,7 @@ gulp.task('scripts', function() {
 gulp.task('watch', function() {
     gulp.watch('../public/assets/js/*.js', ['lint', 'scripts']);
     gulp.watch('../public/assets/less/*.less', ['less']);
+    gulp.watch('../public/assets/less/*/*.less', ['less']);
 });
 
 // Default Task

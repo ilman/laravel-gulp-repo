@@ -11,7 +11,7 @@
 ?>
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<?php echo trans('text.user_group_index') ?>
+		<?php echo trans('heading.user_group_list') ?>
 	</div>
 	<!-- panel heading -->
 
@@ -35,7 +35,7 @@
 
 	<?php if(isset($result) && $result->total): ?>
 		<div class="navbar nav-toolbar">
-			<div class="navbar-text">
+			<div class="navbar-text hidden-xs">
 				<?php echo App_Util::paginationText($result) ?>
 			</div>
 			<?php echo App_Util::paginationLinks($result, $link_params) ?>

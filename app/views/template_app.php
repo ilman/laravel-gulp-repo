@@ -1,4 +1,8 @@
 <html>
+<?php 
+	$current_user = Sentry::getUser();
+	$request_path = Request::path();
+?>
 <head>
 	<title></title>
 
@@ -14,21 +18,51 @@
 </head>
 <body>
 	<div id="header">
-		
+		<?php include('template/header.php') ?>
 	</div>
 	<!-- header -->
 	<div id="content">
 		<div class="container">
 			<?php 
-				$user = Sentry::getUser();
+				$subheader = (isset($subheader)) ? $subheader : true;
 			?>
+			<?php if($subheader): ?>
+				<div id="subheader" class="navbar">
+					<div class="navbar-left">
+						<?php 
+							$page_title = (isset($page_title)) ? $page_title : $request_path;
+							$page_icon = isset($page_icon) ? $page_icon : 'icon-page';
+							echo SG_Tags::pageTitle($page_title, $page_icon);
+						?>
+					</div>
+					<div class="navbar-right">
+						<?php 
+							$breadcrumb = (isset($breadcrumb)) ? $breadcrumb : $request_path;
+							echo SG_Tags::breadcrumb($breadcrumb);
+						?>
+					</div>
+				</div>
+				<!-- subheader -->
 
-			<?php echo Notification::container(); ?>
+				<?php echo SG_Tags::spacer(); ?>
+			<?php endif; ?>
+
+			<?php
+				echo Notification::container();
+				Notification::clearAll();
+
+				$error_messages = $errors->all();
+				if($error_messages){
+					echo Notification::errorInstant($error_messages);
+				}
+			?>
 			<?php include(app_path().'/views/'.$content.'.php'); ?>
 		</div>
 	</div>
 	<!-- content -->
-	<div id="footer"></div>
+	<div id="footer">
+		<?php include('template/footer.php') ?>
+	</div>
 	<!-- footer -->
 	<script type="text/javascript" src="<?php echo asset('assets/js/functions.js') ?>"></script>
 	<script type="text/javascript" src="<?php echo asset('assets/js/script.js') ?>"></script>

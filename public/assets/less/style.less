@@ -1,21 +1,29 @@
 @import "bootstrap/bootstrap.less";
 
+.display-block{ display:block; }
+.padding-4x{ padding:4em; }
+
+/*---bootstrap fix---*/
 table, th, td{ font-size:inherit; line-height:inherit; }
 a.label{ color:#fff; cursor:pointer; }
 .container{ max-width:960px; }
 .fa{ line-height:inherit; }
-.padding-4x{ padding:4em; }
+.navbar-form{ .clearfix; }
 
 /*---template---*/
-#header{ margin-bottom:60px; }
+#header{ margin-bottom:40px; }
+#subheader{
+	.page-title{ font-size:20px; line-height:32px; font-weight:bold; margin-top:0; }
+}
+#content{ margin-bottom:40px; }
 
 /*---page index---*/
 .nav-toolbar{ margin:0; }
 .nav-toolbar form{ margin:0; padding:0; }
 .nav-toolbar .pagination{ margin:10px 10px; float:right; }
-.nav-toolbar .navbar-right{ padding-right:10px; }
 .panel .nav-toolbar{ border-top:#ddd solid 1px; }
 .panel .table-list{ border-top:#ddd solid 1px; }
+.panel-heading{ font-weight:bold; }
 .panel-heading + .nav-toolbar{ border-top:0 none; }
 
 /*---table---*/

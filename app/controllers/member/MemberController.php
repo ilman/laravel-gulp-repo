@@ -8,6 +8,7 @@ use Input;
 use Exception;
 use Redirect;
 use Notification;
+use Event;
 
 use Sentry;
 use Model\User;
@@ -22,6 +23,8 @@ class MemberController extends BaseController {
 			'content' => 'member/user/dashboard',
 			'values' => Input::old(),
 		);
+
+		Event::fire('test.dashboard', array($data));
 
 		return View::make($this->template, $data);
 	}

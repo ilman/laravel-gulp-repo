@@ -8,6 +8,8 @@ use Input;
 use Exception;
 use Redirect;
 use Notification;
+use Event;
+use FormRules;
 
 use Sentry;
 use Model\User;
@@ -25,6 +27,7 @@ class AuthController extends BaseController {
 	{
 		$data = array(
 			'content' => 'guest/auth/login',
+			'subheader' => false,
 			'values' => Input::old(),
 		);
 
@@ -49,6 +52,7 @@ class AuthController extends BaseController {
 	{
 		$data = array(
 			'content' => 'guest/auth/register',
+			'subheader' => false,
 			'values' => Input::old(),
 		);
 
@@ -57,6 +61,12 @@ class AuthController extends BaseController {
 
 	public function postRegister()
 	{
+		$validator = FormRules::formRegister();
+		if($validator->fails()){
+			return Redirect::to('register')
+			->withErrors($validator)->withInput();
+		}
+
 		$input_username = Input::get('username');
 		$input_email = Input::get('email');
 		$input_phone = Input::get('phone');
@@ -80,6 +90,8 @@ class AuthController extends BaseController {
 
 			Sentry::login($user, false);
 
+			Event::fire('user.register', array($user));
+
 			Notification::success('notif.register_user_success');
 			return Redirect::to('member');
 		}
@@ -91,6 +103,12 @@ class AuthController extends BaseController {
 
 	public function postLogin()
 	{
+		$validator = FormRules::formLogin();
+		if($validator->fails()){
+			return Redirect::to('login')
+			->withErrors($validator)->withInput();
+		}
+
 		$input_username = Input::get('username');
 		$input_password = Input::get('password');
 
@@ -105,6 +123,8 @@ class AuthController extends BaseController {
 			$user = Sentry::findUserById(1);
 
 			Sentry::login($user, false);
+
+			Event::fire('user.login', array($user));
 
 			Notification::success('notif.login_user_success');
 			return Redirect::to('member');

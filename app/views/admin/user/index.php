@@ -35,7 +35,7 @@
 
 	<?php if(isset($result) && $result->total): ?>
 		<div class="navbar nav-toolbar">
-			<div class="navbar-text">
+			<div class="navbar-text hidden-xs">
 				<?php echo App_Util::paginationText($result) ?>
 			</div>
 			<?php echo App_Util::paginationLinks($result, $link_params) ?>
