@@ -8,6 +8,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var minify = require('gulp-minify-css');
+var plumber = require('gulp-plumber');
 
 
 // Lint Task
@@ -20,7 +21,8 @@ gulp.task('lint', function() {
 
 // Compile Our Less
 gulp.task('less', function() {
-    return gulp.src('../public/assets/less/theme.less')
+    return gulp.src('../public/assets/less/*.less')
+        .pipe(plumber())
         .pipe(less())
         .pipe(gulp.dest('../public/assets/css'));
 });
@@ -28,6 +30,7 @@ gulp.task('less', function() {
 // Minify Our CSS
 gulp.task('minify', function() {
     return gulp.src('../public/assets/css/*.css')
+        .pipe(plumber())
         .pipe(rename(function(path){
             path.extname = ".min.css";
         }))
@@ -37,7 +40,10 @@ gulp.task('minify', function() {
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src('../public/assets/vendor/*.js')
+    return gulp.src([
+            'src/js/plugins/*.js', 
+            'src/js/main.js'
+        ])
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('../public/assets/js'))
         .pipe(rename('vendor.min.js'))
@@ -53,4 +59,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'less', 'minify', 'scripts', 'watch']);
+gulp.task('default', ['less', 'minify', 'watch']);

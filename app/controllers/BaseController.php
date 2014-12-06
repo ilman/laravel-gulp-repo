@@ -2,6 +2,8 @@
 
 class BaseController extends Controller {
 
+	public $template = 'template_app';
+
 	/**
 	 * Setup the layout used by the controller.
 	 *
