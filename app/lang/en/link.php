@@ -7,4 +7,10 @@ return array(
 	'forgot_password' => 'Forgot Password',
 	'support' => 'Support',
 	'account' => 'Account',
+	'dashboard' => 'Dashboard',
+	'company' => 'Company',
+	'product' => 'Product',
+	'comment' => 'Comment',
+	'message' => 'Message',
+	'settings' => 'Settings',
 );

@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
+	'debug' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -126,6 +126,7 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
+		'Schickling\Backup\BackupServiceProvider',
 
 	),
 

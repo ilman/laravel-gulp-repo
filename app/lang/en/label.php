@@ -20,6 +20,7 @@ return array(
 	'btn_register' => 'Register',
 	'btn_user_add' => 'Add New User',
 	'btn_user_group_add' => 'Add New User Group',
+	'btn_company_add' => 'Add New Company',
 
 	/*---td---*/
 	'td_username' => 'Username',
@@ -32,4 +33,18 @@ return array(
 	/*---actions---*/
 	'action_edit' => 'Edit',
 	'action_delete' => 'Delete',
+
+	/*---company---*/
+	'company_name' => 'Company Name',
+	'company_phone' => 'Company Phone',
+	'company_email' => 'Company Email',
+	'company_address' => 'Company Address',
+	'company_province' => 'Company Province',
+	'company_subprovince' => 'Company SubProvince',
+	'company_city' => 'Company City',
+	'company_zipcode' => 'Company Zipcode',
+	'company_desc' => 'Company Desc',
+	'company_image' => 'Company Image',
+	'td_company_name' => 'Company Name',
+	'td_company_url' => 'Company URL',
 );

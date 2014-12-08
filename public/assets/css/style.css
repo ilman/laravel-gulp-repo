@@ -4915,6 +4915,19 @@ a.label {
 #header {
   margin-bottom: 40px;
 }
+#header .navbar {
+  margin: 0;
+}
+#header .navbar-main {
+  margin: 0;
+  border-color: #e7e7e7;
+}
+#header .navbar + .navbar {
+  border-top: 0 none;
+}
+#header .navbar-collapse {
+  padding: 0;
+}
 #subheader .page-title {
   font-size: 20px;
   line-height: 32px;

@@ -43,13 +43,18 @@ class FormRules{
         return $validator;
     }
 
-    public static function formProductGroup()
+    public static function formCompany()
     {
         $input = Input::all();
 
         $rules = array(
-            'store_id' => 'required',
-            'group_name' => 'required',
+            'company_name' => 'required',
+            // 'company_phone' => 'required',
+            // 'company_email' => 'required',
+            // 'company_address' => 'required',
+            // 'company_city_id' => 'required',
+            // 'company_zipcode' => 'required',
+            // 'company_desc' => 'required',
         );
         $validator = Validator::make($input, $rules);
 

@@ -9,7 +9,8 @@
 		"edvinaskrucas/notification": "3.*",
 		"scienceguard/sg_form": "1.*",
 		"xethron/migrations-generator": "dev-master",
-		"cartalyst/sentry": "2.1.*"
+		"cartalyst/sentry": "2.1.*",
+		"schickling/backup": "~0.5"
 	},
 	"autoload": {
 		"classmap": [
