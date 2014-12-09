@@ -47,6 +47,7 @@ Route::group(
 	function(){
 		Route::get('', 'MemberController@getDashboard');
 		Route::controller('company', 'CompanyController');
+		Route::controller('product', 'ProductController');
 	}
 );
 

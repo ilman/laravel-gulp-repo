@@ -13,4 +13,5 @@ return array(
 	'comment' => 'Comment',
 	'message' => 'Message',
 	'settings' => 'Settings',
+	'hi_user' => 'Hi, :username',
 );

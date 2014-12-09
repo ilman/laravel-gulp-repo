@@ -60,4 +60,22 @@ class FormRules{
 
         return $validator;
     }
+
+    public static function formProduct()
+    {
+        $input = Input::all();
+
+        $rules = array(
+            'product_name' => 'required',
+            // 'company_phone' => 'required',
+            // 'company_email' => 'required',
+            // 'company_address' => 'required',
+            // 'company_city_id' => 'required',
+            // 'company_zipcode' => 'required',
+            // 'company_desc' => 'required',
+        );
+        $validator = Validator::make($input, $rules);
+
+        return $validator;
+    }
 }

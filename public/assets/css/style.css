@@ -4993,3 +4993,6 @@ a.label {
 .radio label + label {
   margin-left: 20px;
 }
+.input-group-btn .btn {
+  height: 34px;
+}

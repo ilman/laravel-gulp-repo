@@ -1,3 +1,10 @@
+<?php
+	use Scienceguard\SG_Util;
+	echo '<pre style="padding:10px; border:#ddd solid 1px; background:#eee; color:#999;">';
+	print_r($current_user->toArray());
+	echo '</pre>';
+?>
+
 <nav class="navbar navbar-main" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
@@ -9,9 +16,12 @@
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<?php if($current_user): ?>
+					<?php 
+						$this_user = $current_user->toArray();
+					?>
 					<li>
 						<a href="<?php echo url('member/account') ?>">
-							<?php echo trans('link.account') ?>
+							<?php echo trans('link.hi_user', $this_user) ?>
 						</a>
 					</li>
 					<li><a href="<?php echo url('logout') ?>">Logout</a></li>
